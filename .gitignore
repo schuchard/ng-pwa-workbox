@@ -40,3 +40,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# json-server
+# remove if wanting to persist data to the db.json file
+db.json
