@@ -28,9 +28,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Setup
 
-### Setup App
-`yarn install`
-
-### Run Workbox setup
-
-`workbox generate:sw` 
