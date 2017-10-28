@@ -12,7 +12,8 @@
     "build:sw": "workbox generate:sw",
     "start:db": "node server/index.js",
     "build-prod:sw": "ng build --prod && npm run build:sw",
-    "static-server": "cd dist && live-server --port=4200 --host=localhost --entry-file=/index.html"
+    "static-server": "cd dist && live-server --port=4200 --host=localhost --entry-file=/index.html",
+    "launch": "npm run build-prod:sw && concurrently -k -p \"[{name}]\" -n \"DB,SERVER\" -c \"cyan.bold,magenta.bold\" \"npm run start:db\" \"npm run static-server\""
   },
   "private": true,
   "dependencies": {
@@ -37,6 +38,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.2.0",
+    "concurrently": "^3.5.0",
     "faker": "^4.1.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
