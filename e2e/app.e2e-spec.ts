@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('pwa-workbox App', () => {
+describe('ng-pwa App', () => {
   let page: AppPage;
 
   beforeEach(() => {
