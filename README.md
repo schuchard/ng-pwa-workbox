@@ -2,6 +2,23 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
 
+## Setup
+
+install
+
+- Node: `v8.7.0`
+- Yarn globally
+
+run `yarn install`
+
+## Build
+run `yarn run launch`
+
+1. builds app
+1. builds service worker from dist folder
+1. concurrently starts local json-db at `http://localhost:3000` & local server at `http://localhost:4200`
+
+# Angular CLI
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -25,8 +42,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-# Setup
-
-Node: `v8.7.0`
-
