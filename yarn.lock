@@ -6615,6 +6615,10 @@ workbox-sw@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/workbox-sw/-/workbox-sw-2.1.0.tgz#605f50ce6ac5857114484b824b24d4454d351895"
 
+workbox-sw@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/workbox-sw/-/workbox-sw-2.1.1.tgz#26482d97f70fd4e70fce8c6cd520b4395df98bf8"
+
 worker-farm@^1.4.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/worker-farm/-/worker-farm-1.5.1.tgz#8e9f4a7da4f3c595aa600903051b969390423fa1"

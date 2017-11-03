@@ -1,4 +1,4 @@
-importScripts('workbox-sw.prod.v2.1.0.js');
+importScripts('workbox-sw.prod.v2.1.1.js');
 
 /**
  * Create an instance of WorkboxSW.

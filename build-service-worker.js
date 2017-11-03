@@ -1,13 +1,17 @@
 const workboxBuild = require('workbox-build');
 const distDirectory =  'dist/';
 const fs = require('fs');
-const workboxFileName = 'workbox-sw.prod.v2.1.0.js';
+const workboxFileName = 'workbox-sw.prod.v2.1.1.js';
 
 workboxBuild.injectManifest({
   swSrc: 'service-worker.js',
   swDest: distDirectory + '/sw.js',
   globDirectory: distDirectory,
-  globPatterns: [ "**/*.{txt,ico,html,js,css}"],
+  globPatterns: [
+    "index.html",
+    "**/*.bundle.css",
+    "**/*.bundle.js"
+  ],
 })
   .then(() => {
     /*

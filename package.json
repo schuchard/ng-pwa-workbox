@@ -13,7 +13,8 @@
     "start:db": "node server/index.js",
     "build-prod:sw": "ng build --prod && npm run build:sw",
     "static-server": "cd dist && live-server --port=4200 --host=localhost --entry-file=/index.html",
-    "launch": "npm run build-prod:sw && concurrently -k -p \"[{name}]\" -n \"DB,SERVER\" -c \"cyan.bold,magenta.bold\" \"npm run start:db\" \"npm run static-server\""
+    "start:db:server": "concurrently -k -p \"[{name}]\" -n \"DB,SERVER\" -c \"cyan.bold,magenta.bold\" \"npm run start:db\" \"npm run static-server\"",
+    "launch": "npm run build-prod:sw && npm run start:db:server"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "@angular/router": "^5.0.0",
     "core-js": "^2.5.1",
     "rxjs": "^5.5.2",
+    "workbox-sw": "^2.1.1",
     "zone.js": "^0.8.18"
   },
   "devDependencies": {
