@@ -1,7 +1,6 @@
 const workboxBuild = require('workbox-build');
 const distDirectory =  'dist/';
 const fs = require('fs');
-const workboxFileName = 'workbox-sw.prod.v2.1.1.js';
 
 workboxBuild.injectManifest({
   swSrc: 'service-worker.js',
@@ -14,6 +13,10 @@ workboxBuild.injectManifest({
   ],
 })
   .then(() => {
+    // read installed workbox version
+    const workboxPkg = require('./node_modules/workbox-sw/package.json');
+    const workboxFileName = `workbox-sw.prod.v${workboxPkg.version}.js`;
+
     /*
     * copy ServiceWorker into dist folder
     * handled by the workbox cli but not with `injectManifest`
