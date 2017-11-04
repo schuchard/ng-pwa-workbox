@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './not-found.component';
 import { AdminModule } from './admin/admin.module';
 import { EmployeeModule } from './employee/employee.module';
 import { AppRoutingModule } from './app.routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app.routing.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     EmployeeModule,
     AdminModule,
     AppRoutingModule,

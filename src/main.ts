@@ -26,6 +26,6 @@ function registerServiceWorker(swName: string) {
         console.error('[App] Service worker registration failed', err)
       );
   } else {
-    console.error('[App] Service Worker API is disabled');
+    console.warn('[App] Service Worker API is disabled');
   }
 }

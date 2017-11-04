@@ -12,7 +12,7 @@ install
 run `yarn install`
 
 ## Build
-run `yarn run launch`
+run `yarn launch`
 
 1. builds app
 1. builds service worker from dist folder
