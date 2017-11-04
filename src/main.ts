@@ -16,7 +16,7 @@ platformBrowserDynamic()
   .catch(err => console.log(err));
 
 function registerServiceWorker(swName: string) {
-  if ('serviceWorker' in navigator) {
+  if ('serviceWorker' in navigator && environment.production) {
     navigator.serviceWorker
       .register(`/${swName}.js`)
       .then(reg => {
@@ -26,6 +26,6 @@ function registerServiceWorker(swName: string) {
         console.error('[App] Service worker registration failed', err)
       );
   } else {
-    console.error('[App] Service Worker API is not supported in current browser');
+    console.error('[App] Service Worker API is disabled');
   }
 }
