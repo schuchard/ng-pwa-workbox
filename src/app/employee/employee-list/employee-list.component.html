@@ -1,5 +1,6 @@
-<p>
-  employee-list works!
-
-  {{employees | async | json}}
-</p>
+<mat-card *ngFor="let employee of employees | async">
+  <mat-card-title>{{employee.name}}</mat-card-title>
+  <mat-card-content>
+    {{employee.address.city}} - {{employee.address.state}}
+  </mat-card-content>
+</mat-card>

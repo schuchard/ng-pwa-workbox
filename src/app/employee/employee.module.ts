@@ -7,10 +7,13 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 // routing
 import { EmployeeRoutingModule } from './employee-routing.module';
 
+import { MatCardModule } from '@angular/material';
+
 @NgModule({
   imports: [
     CommonModule,
-    EmployeeRoutingModule
+    MatCardModule,
+    EmployeeRoutingModule,
   ],
   declarations: [EmployeeListComponent]
 })
