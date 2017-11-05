@@ -138,7 +138,7 @@ workboxSW.router.registerRoute(
     cacheName: 'admins',
     cacheExpiration: {
       maxEntries: 1,
-      maxAgeSeconds: 3,
+      maxAgeSeconds: 5,
     },
     cacheableResponse: {statuses: [0, 200]},
   })

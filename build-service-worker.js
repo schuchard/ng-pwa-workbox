@@ -9,7 +9,8 @@ workboxBuild.injectManifest({
   globPatterns: [
     "index.html",
     "**/*.bundle.css",
-    "**/*.bundle.js"
+    "**/*.bundle.js",
+    "**/*.chunk.js"
   ],
 })
   .then(() => {
