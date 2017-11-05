@@ -121,12 +121,24 @@ workboxSW.router.registerRoute(
 );
 
 workboxSW.router.registerRoute(
-  'http://localhost:3000/api/admins',
+  'http://localhost:3000/api/employees',
   workboxSW.strategies.cacheFirst({
-    cacheName: 'admins',
+    cacheName: 'employees',
     cacheExpiration: {
       maxEntries: 1,
       maxAgeSeconds: 5,
+    },
+    cacheableResponse: {statuses: [0, 200]},
+  })
+);
+
+workboxSW.router.registerRoute(
+  'http://localhost:3000/api/admins',
+  workboxSW.strategies.staleWhileRevalidate({
+    cacheName: 'admins',
+    cacheExpiration: {
+      maxEntries: 1,
+      maxAgeSeconds: 3,
     },
     cacheableResponse: {statuses: [0, 200]},
   })
