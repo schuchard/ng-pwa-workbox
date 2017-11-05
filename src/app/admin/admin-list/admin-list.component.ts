@@ -12,7 +12,7 @@ export class AdminListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.admins = this.http.get('http://localhost:3000/api/employees');
+    this.admins = this.http.get('http://localhost:3000/api/admins');
   }
 
 }

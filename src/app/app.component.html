@@ -1,13 +1,18 @@
 <div>
-  <a
-    [routerLink]="['/employee']"
-    routerLinkActive="active">
-    Employee
-  </a>
-  <a
-    [routerLink]="['/admin']"
-    routerLinkActive="active">
-    Admin
-  </a>
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+       [routerLink]="['/employee']"
+       routerLinkActive #erl="routerLinkActive"
+       [active]="erl.isActive">
+      Employee
+    </a>
+    <a mat-tab-link
+       [routerLink]="['/admin']"
+       routerLinkActive #arl="routerLinkActive"
+       [active]="arl.isActive">
+      Admin
+    </a>
+  </nav>
+
   <router-outlet></router-outlet>
 </div>

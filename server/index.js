@@ -9,7 +9,7 @@ const randomData = require('./random-data-db');
 const PORT = 3000;
 const Routes = {
   employees:'/api/employees',
-  admins: 'api/admins'
+  admins: '/api/admins'
 };
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
@@ -43,8 +43,8 @@ server.listen(PORT, () => {
 });
 
 function listRoutes(routes) {
+  console.log('Resources:\n');
   Object.entries(routes).forEach(([key, value]) => {
-    console.log('Resources:\n');
     console.log(`${key}: http://localhost:${PORT}${value}`);
   });
 }

@@ -11,6 +11,7 @@ import { EmployeeModule } from './employee/employee.module';
 import { AppRoutingModule } from './app.routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatTabsModule,
     EmployeeModule,
     AdminModule,
     AppRoutingModule,
