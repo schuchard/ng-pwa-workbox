@@ -13,6 +13,7 @@
     "start:db": "node server/index.js",
     "build-prod:sw": "ng build --prod && npm run build:sw",
     "static-server": "cd dist && live-server --port=4200 --host=localhost --entry-file=/index.html",
+    "serve:client": "npm run build-prod:sw && npm run static-server",
     "start:db:server": "concurrently -k -p \"[{name}]\" -n \"DB,SERVER\" -c \"cyan.bold,magenta.bold\" \"npm run start:db\" \"npm run static-server\"",
     "launch": "npm run build-prod:sw && npm run start:db:server"
   },

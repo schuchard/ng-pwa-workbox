@@ -25,6 +25,27 @@ const workboxSW = new self.WorkboxSW({clientsClaim: true});
  */
 workboxSW.precache([]);
 
+workboxSW.router.registerRoute(
+  'http://localhost:3000/api/employees',
+  workboxSW.strategies.cacheFirst({
+    cacheName: 'employees',
+    cacheExpiration: {
+      maxEntries: 1,
+      maxAgeSeconds: 50,
+    },
+    cacheableResponse: {statuses: [0, 200]},
+  })
+);
+
+workboxSW.router.registerRoute(
+  'http://localhost:3000/api/admins',
+  workboxSW.strategies.networkFirst({
+    cacheName: 'admins',
+    cacheableResponse: {statuses: [0, 200]},
+    networkTimeoutSeconds: 2
+  })
+);
+
 /**
  * registerNavigationRoute() is used for sites that follow the App Shell Model,
  * https://developers.google.com/web/fundamentals/architecture/app-shell
@@ -78,10 +99,10 @@ workboxSW.precache([]);
  * Set up a route that will match any URL requested that ends in .txt.
  * Handle those requests using a network-first strategy.
  */
-workboxSW.router.registerRoute(
-  /\.txt$/,
-  workboxSW.strategies.networkFirst()
-);
+//workboxSW.router.registerRoute(
+//  /\.txt$/,
+//  workboxSW.strategies.networkFirst()
+//);
 
 /**
  * Set up a route that will match any URL requested that starts with
@@ -90,10 +111,10 @@ workboxSW.router.registerRoute(
  * If there's no network response before the timeout, then return the previous
  * response from the cache instead.
  */
-workboxSW.router.registerRoute(
-  'https://httpbin.org/delay/(.*)',
-  workboxSW.strategies.networkFirst({networkTimeoutSeconds: 3})
-);
+//workboxSW.router.registerRoute(
+//  'https://httpbin.org/delay/(.*)',
+//  workboxSW.strategies.networkFirst({networkTimeoutSeconds: 3})
+//);
 
 /**
  * Set up a route that will match any URL requested that starts with
@@ -108,38 +129,14 @@ workboxSW.router.registerRoute(
  * be "opaque", and have a status code of 0. When using a cache-first strategy,
  * we need to explicitly opt-in to caching responses with a status of 0.
  */
-workboxSW.router.registerRoute(
-  'https://httpbin.org/image/(.*)',
-  workboxSW.strategies.cacheFirst({
-    cacheName: 'images',
-    cacheExpiration: {
-      maxEntries: 2,
-      maxAgeSeconds: 7 * 24 * 60 * 60,
-    },
-    cacheableResponse: {statuses: [0, 200]},
-  })
-);
-
-workboxSW.router.registerRoute(
-  'http://localhost:3000/api/employees',
-  workboxSW.strategies.cacheFirst({
-    cacheName: 'employees',
-    cacheExpiration: {
-      maxEntries: 1,
-      maxAgeSeconds: 5,
-    },
-    cacheableResponse: {statuses: [0, 200]},
-  })
-);
-
-workboxSW.router.registerRoute(
-  'http://localhost:3000/api/admins',
-  workboxSW.strategies.staleWhileRevalidate({
-    cacheName: 'admins',
-    cacheExpiration: {
-      maxEntries: 1,
-      maxAgeSeconds: 5,
-    },
-    cacheableResponse: {statuses: [0, 200]},
-  })
-);
+//workboxSW.router.registerRoute(
+//  'https://httpbin.org/image/(.*)',
+//  workboxSW.strategies.cacheFirst({
+//    cacheName: 'images',
+//    cacheExpiration: {
+//      maxEntries: 2,
+//      maxAgeSeconds: 7 * 24 * 60 * 60,
+//    },
+//    cacheableResponse: {statuses: [0, 200]},
+//  })
+//);
