@@ -119,3 +119,15 @@ workboxSW.router.registerRoute(
     cacheableResponse: {statuses: [0, 200]},
   })
 );
+
+workboxSW.router.registerRoute(
+  'http://localhost:3000/api/admins',
+  workboxSW.strategies.cacheFirst({
+    cacheName: 'admins',
+    cacheExpiration: {
+      maxEntries: 1,
+      maxAgeSeconds: 5,
+    },
+    cacheableResponse: {statuses: [0, 200]},
+  })
+);
