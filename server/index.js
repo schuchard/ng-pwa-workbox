@@ -8,14 +8,19 @@ const randomData = require('./random-data-db');
 
 const PORT = 3000;
 const Routes = {
-  users:'/api/users/random'
+  employees:'/api/employees',
+  admins: 'api/admins'
 };
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
 
 // Add custom routes before JSON Server router
-server.get(Routes.users, (req, res) => {
-  res.jsonp(randomData())
+server.get(Routes.employees, (req, res) => {
+  res.json(randomData())
+});
+
+server.get(Routes.admins, (req, res) => {
+  res.json(randomData())
 });
 
 // To handle POST, PUT and PATCH you need to use a body-parser
