@@ -31,7 +31,7 @@ workboxSW.router.registerRoute(
     cacheName: 'employees',
     cacheExpiration: {
       maxEntries: 1,
-      maxAgeSeconds: 50,
+      maxAgeSeconds: 5,
     },
     cacheableResponse: {statuses: [0, 200]},
   })
@@ -47,6 +47,9 @@ workboxSW.router.registerRoute(
 );
 
 /**
+ * Example Workbox ServiceWorker
+ *
+ *
  * registerNavigationRoute() is used for sites that follow the App Shell Model,
  * https://developers.google.com/web/fundamentals/architecture/app-shell
  * It tells the service worker that whenever there's a navigation request for
