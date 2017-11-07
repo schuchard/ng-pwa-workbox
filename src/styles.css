@@ -4,4 +4,6 @@
 .mat-card {
   margin: 10px;
   background-color: #f7f7f7;
+  float: left;
+  width: 300px;
 }

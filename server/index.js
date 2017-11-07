@@ -20,7 +20,7 @@ server.get(Routes.employees, (req, res) => {
 });
 
 server.get(Routes.admins, (req, res) => {
-  setTimeout(() => res.json(randomData()), 1500);
+  res.json(randomData());
 });
 
 // To handle POST, PUT and PATCH you need to use a body-parser

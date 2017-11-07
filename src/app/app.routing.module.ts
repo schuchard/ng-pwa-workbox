@@ -6,7 +6,7 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 const routes: Routes = [
   { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule' },
   { path: 'employee', component: EmployeeListComponent },
-  { path: '', redirectTo: '/employee', pathMatch: 'full' },
+  { path: '', redirectTo: 'employee', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
