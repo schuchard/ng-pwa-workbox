@@ -18,6 +18,18 @@ run `yarn launch`
 1. builds service worker from dist folder
 1. concurrently starts local json-db at `http://localhost:3000` & local server at `http://localhost:4200`
 
+## Development
+
+Run these commands in separate terminals to test deactivating the client server and local database independently
+
+> \# shell 1 - build client, generate ServiceWorker, start local server
+>
+> npm run serve:client
+
+> \# shell 2 - start local database
+>
+> npm run start:db
+
 # Angular CLI
 ## Development server
 
