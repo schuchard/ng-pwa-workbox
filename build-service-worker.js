@@ -5,6 +5,7 @@ const fs = require('fs');
 workboxBuild.injectManifest({
   swSrc: 'service-worker.js',
   swDest: distDirectory + '/sw.js',
+  navigateFallback: '/',
   globDirectory: distDirectory,
   globPatterns: [
     "index.html",
